@@ -28,7 +28,7 @@ if name and usn and instructor_name:
 
 
 # --- Load Dataset ---
-tips = sns.load_dataset('tips')  # Loading the tips dataset
+dataset = sns.load_dataset('tips')  # Loading the tips dataset
 
 
 # Display the first few rows of the dataset
@@ -40,7 +40,7 @@ st.write(tips.head())
 st.subheader("Task 2: Bar Chart - Average Tip by Day")
 # Bar Chart: Average Tip by Day with color for each day
 fig2 = px.bar(
-    tips, x='day', y='tip', color='day',
+    dataset, x='day', y='tip', color='day',
     title='Average Tip by Day',
     labels={'tip': 'Average Tip ($)', 'day': 'Day of the Week'},
     template='plotly_white'
@@ -48,7 +48,7 @@ fig2 = px.bar(
 st.plotly_chart(fig2)  # Display the chart in Streamlit
 # Histrogram chart: Tip distribution
 fig3 = px.scatter(
-    tips, x='day', y='tip', color='day',
+    dataset, x='day', y='tip', color='day',
     title='Average Tip by Day',
     labels={'tip': 'Average Tip ($)', 'day': 'Day of the Week'},
     template='plotly_white'
